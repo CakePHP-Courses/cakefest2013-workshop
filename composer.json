@@ -1,0 +1,20 @@
+{
+  "name": "bakers",
+	"repositories": [
+		{
+			"type": "pear",
+			"url": "http://pear.cakephp.org"
+		}
+	],
+	"require": {
+		"pear-cakephp/cakephp": "2.4.0-RC2",
+		"cakephp/debug_kit" : "dev-master",
+		"cakedc/migrations" : "dev-develop",
+		"jippi/cakephp-crud" : "dev-develop",
+		"slywalker/twitter_bootstrap": "dev-master",
+		"facebook/php-sdk": "dev-master"
+	},
+	"config": {
+		"vendor-dir": "Vendor/"
+	}
+}
