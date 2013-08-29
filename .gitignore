@@ -8,3 +8,4 @@ app/[Cc]onfig/database.php
 Vendor/*
 Plugin/*
 composer.phar
+Config/core.local.php
