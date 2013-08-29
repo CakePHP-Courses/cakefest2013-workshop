@@ -38,6 +38,16 @@ class PagesController extends AppController {
 	public $uses = array();
 
 /**
+ * Overrides to allow display to be public
+ *
+ * @return void
+ */
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('display');
+	}
+
+/**
  * Displays a view
  *
  * @param mixed What page to display

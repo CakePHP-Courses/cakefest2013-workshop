@@ -13,6 +13,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('CrudControllerTrait', 'Crud.Lib');
 
 /**
  * Application Controller
@@ -24,5 +25,19 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $components = array('DebugKit.Toolbar');
+
+	use CrudControllerTrait;
+
+	public $components = array(
+		'Session',
+		'Auth' => [
+			'authenticate' => [
+				'Facebook'
+			]
+		],
+		'DebugKit.Toolbar',
+		'Crud.Crud' => array(
+			'actions' => array('index', 'add', 'view', 'edit', 'delete')
+		)
+	);
 }

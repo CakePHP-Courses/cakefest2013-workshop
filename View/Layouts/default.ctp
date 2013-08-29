@@ -25,16 +25,26 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
+		echo $this->Html->script('jquery.min');
 		echo $this->fetch('script');
 	?>
 </head>
 <body>
+	<?= $this->element('facebook_init'); ?>
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
 		</div>
 		<div id="content">
-
+			<div class="span3 pull-right" id="fb-login">
+				<div class="fb-login-button"
+					data-size="small"
+					data-width="200"
+					data-autologoutlink="true"
+					data-scope="email,user_location,user_work_history"
+				>
+				</div>
+			</div>
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
