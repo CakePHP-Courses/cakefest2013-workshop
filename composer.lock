@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "aed01d0a17d759cc9cf291706e0ca6dc",
+    "hash": "181abf1d7bc075d4b4b4f53a6ace8a31",
     "packages": [
         {
             "name": "cakedc/migrations",
@@ -92,16 +92,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "5bad5563431576e1b318c7326c0e61c6567000bd"
+                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/5bad5563431576e1b318c7326c0e61c6567000bd",
-                "reference": "5bad5563431576e1b318c7326c0e61c6567000bd",
+                "url": "https://api.github.com/repos/composer/installers/zipball/b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
+                "reference": "b3bd071ea114a57212c75aa6a2eef5cfe0cc798f",
                 "shasum": ""
             },
             "replace": {
@@ -131,13 +131,14 @@
                 {
                     "name": "Kyle Robinson Young",
                     "email": "kyle@dontkry.com",
-                    "homepage": "http://dontkry.com",
+                    "homepage": "https://github.com/shama",
                     "role": "Developer"
                 }
             ],
             "description": "A multi-framework Composer library installer",
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
+                "TYPO3 CMS",
                 "TYPO3 Flow",
                 "TYPO3 Neos",
                 "agl",
@@ -160,7 +161,7 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-08-07 17:25:08"
+            "time": "2013-08-20 04:37:09"
         },
         {
             "name": "facebook/php-sdk",
@@ -206,17 +207,17 @@
             "time": "2013-05-16 02:42:18"
         },
         {
-            "name": "jippi/cakephp-crud",
+            "name": "friendsofcake/crud",
             "version": "dev-develop",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jippi/cakephp-crud.git",
-                "reference": "a9ef48702396603a0444b05624698beb2ca4a1f5"
+                "url": "https://github.com/FriendsOfCake/crud.git",
+                "reference": "4bf4c933fa57d4aefa82b9ae7c82e265fa6c6aa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jippi/cakephp-crud/zipball/a9ef48702396603a0444b05624698beb2ca4a1f5",
-                "reference": "a9ef48702396603a0444b05624698beb2ca4a1f5",
+                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/4bf4c933fa57d4aefa82b9ae7c82e265fa6c6aa4",
+                "reference": "4bf4c933fa57d4aefa82b9ae7c82e265fa6c6aa4",
                 "shasum": ""
             },
             "require": {
@@ -269,7 +270,7 @@
                 "scaffolding",
                 "update"
             ],
-            "time": "2013-08-21 14:10:47"
+            "time": "2013-08-27 16:50:25"
         },
         {
             "name": "pear-pear.cakephp.org/CakePHP",
@@ -296,6 +297,62 @@
                 "/"
             ],
             "description": "CakePHP is an application development framework for PHP 5.2+"
+        },
+        {
+            "name": "ruflin/elastica",
+            "version": "v0.90.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruflin/Elastica.git",
+                "reference": "f0d77c44748717a27a87fa47f7003831220cab88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/f0d77c44748717a27a87fa47f7003831220cab88",
+                "reference": "f0d77c44748717a27a87fa47f7003831220cab88",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "munkie/elasticsearch-thrift-php": "1.4.*",
+                "psr/log": "~1.0"
+            },
+            "suggest": {
+                "monolog/monolog": "Logging request",
+                "munkie/elasticsearch-thrift-php": "Allow using thrift transport",
+                "psr/log": "for logging"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.20.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Elastica": "lib/",
+                    "Elastica\\Test": "test/lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Ruflin",
+                    "homepage": "http://ruflin.com/"
+                }
+            ],
+            "description": "Elasticsearch Client",
+            "homepage": "http://ruflin.github.com/Elastica/",
+            "keywords": [
+                "client",
+                "search"
+            ],
+            "time": "2013-06-07 19:10:41"
         },
         {
             "name": "slywalker/twitter_bootstrap",
@@ -350,7 +407,7 @@
         "pear-cakephp/cakephp": 5,
         "cakephp/debug_kit": 20,
         "cakedc/migrations": 20,
-        "jippi/cakephp-crud": 20,
+        "friendsofcake/crud": 20,
         "slywalker/twitter_bootstrap": 20,
         "facebook/php-sdk": 20
     },

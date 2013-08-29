@@ -12,7 +12,8 @@
 		"cakedc/migrations" : "dev-develop",
 		"friendsofcake/crud" : "dev-develop",
 		"slywalker/twitter_bootstrap": "dev-master",
-		"facebook/php-sdk": "dev-master"
+		"facebook/php-sdk": "dev-master",
+		"ruflin/elastica": "v0.90.1.0"
 	},
 	"config": {
 		"vendor-dir": "Vendor/"
