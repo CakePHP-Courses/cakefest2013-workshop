@@ -3,18 +3,39 @@ Get Started
 
 * Download a copy
 * Install composer
+
+````
     curl -sS https://getcomposer.org/installer | php
+````
 * Run composer
+
+````
     php composer.phar install
+````
+
 * Create core.php
+
+````
     cp ./Vendor/pear-pear.cakephp.org/CakePHP/Cake/Console/Templates/skel/Config/core.php ./Config/core.php
+````
 * Create Database in mysql
+
+````
     echo "CREATE DATABASE bakers" | mysql -uroot -p -hlocalhost
+````
+
 * Create database.php
+
+````
     Console/cake
+````
 there is a wizard to make database.php for you
+
 * Run Migration
+
+````
     Console/cake Migrations.migration run all
+````
 
 Install ElasticSearch (ubuntu 12.10)
 ------------------------------------
