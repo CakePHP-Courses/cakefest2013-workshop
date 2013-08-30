@@ -7,8 +7,6 @@ App::uses('AppModel', 'Model');
  * @property Company $Company
  */
 class User extends AppModel {
-	
-	<?php
 
 /**
  * Returns the complete document mapping related to this model to be used in Elastic Search
