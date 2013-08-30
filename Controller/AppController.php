@@ -35,7 +35,6 @@ class AppController extends Controller {
 				'Facebook'
 			]
 		],
-		'DebugKit.Toolbar',
 		'Crud.Crud' => array(
 			'actions' => array('index', 'add', 'view', 'edit', 'delete')
 		)

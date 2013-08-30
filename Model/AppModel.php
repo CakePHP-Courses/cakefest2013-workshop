@@ -13,6 +13,7 @@
  */
 
 App::uses('Model', 'Model');
+App::uses('EventCentral', 'Event');
 
 /**
  * Application model for Cake.
@@ -27,4 +28,13 @@ class AppModel extends Model {
 	public $recursive = -1;
 
 	public $actsAs = array('Containable');
+
+	public function getEventManager() {
+		if (empty($this->_eventManager)) {
+			$manager = parent::getEventManager();
+			$manager->attach(new EventCentral());
+			return $manager;
+		}
+		return parent::getEventManager();
+	}
 }

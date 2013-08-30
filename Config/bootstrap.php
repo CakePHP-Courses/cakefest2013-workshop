@@ -108,6 +108,15 @@ CakeLog::config('error', array(
 
 Configure::load('facebook');
 
-CakePlugin::load('DebugKit');
 CakePlugin::load('Migrations');
 CakePlugin::load('Crud');
+
+if (php_sapi_name() !== 'cli' && Configure::read('debug')) {
+	App::uses('CakeEventManager', 'Event');
+	CakeEventManager::instance()->attach(function(CakeEvent $event) {
+		CakePlugin::load('DebugKit');
+		$controller = $event->subject();
+		$controller->Toolbar = $controller->Components->load('DebugKit.Toolbar', ['panels' => ['Crud.Crud', 'history' => false]]);
+		$controller->Crud->addListener('DebugKit', 'Crud.DebugKit');
+	}, 'Controller.initialize');
+}
