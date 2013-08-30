@@ -106,7 +106,9 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-Configure::load('facebook');
+if (file_exists(APP . 'Config' . DS . 'facebook.php')) {
+	Configure::load('facebook');
+}
 
 CakePlugin::load('Migrations');
 CakePlugin::load('Crud');
