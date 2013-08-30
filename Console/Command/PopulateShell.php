@@ -5,7 +5,7 @@ class PopulateShell extends AppShell {
 	public $uses = array('User');
 	public $tasks = array('ProgressBar');
 	
-	public function run(){
+	public function main() {
 		$this->out('Inserting Elastic Search.');
 		$faker = Faker\Factory::create();
 		$this->User->switchToElastic();
@@ -37,11 +37,12 @@ class PopulateShell extends AppShell {
 				'modified' => '2013-08-30 12:00:00'
 			);
 			$this->User->create();
-			if(!$this->User->save($data, ['callbacks' => false])){
+			if (!$this->User->save($data, ['callbacks' => false])) {
 				$this->out("ERROR on $i");
 			}
 			$this->ProgressBar->next();
 		}
+
 		$this->User->switchToDatabase();
 		$this->out();
 		$this->out('Done.');

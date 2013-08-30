@@ -8,6 +8,13 @@ App::uses('CakeEvent', 'Event');
  */
 class UsersController extends AppController {
 
+	public function index() {
+		$this->Crud->on('beforePaginate', function() {
+			$this->User->switchToElastic();
+		});
+		return $this->Crud->executeAction();
+	}
+
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
@@ -17,13 +24,5 @@ class UsersController extends AppController {
 			$this->autoRender = false;
 		}
 	}
-	public function test_es() {
-		$data = [
-			'User' => [
-				'full_name' => 'john smith',
-			],
-		];
-		$this->User->save($data);
-		die('test es done');
-	}
+
 }

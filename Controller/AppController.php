@@ -29,6 +29,7 @@ class AppController extends Controller {
 	use CrudControllerTrait;
 
 	public $components = array(
+		'RequestHandler',
 		'Session',
 		'Auth' => [
 			'authenticate' => [
@@ -36,7 +37,9 @@ class AppController extends Controller {
 			]
 		],
 		'Crud.Crud' => array(
-			'actions' => array('index', 'add', 'view', 'edit', 'delete')
+			'actions' => array('index', 'add', 'view', 'edit', 'delete'),
+			'listeners' => array('Api', 'ApiQueryLog')
 		)
 	);
+
 }
