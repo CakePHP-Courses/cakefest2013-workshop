@@ -36,8 +36,6 @@ class PopulateShell extends AppShell {
 				'created' => '2013-08-30 12:00:00',
 				'modified' => '2013-08-30 12:00:00'
 			);
-			debug($data);
-			exit();
 			$this->User->create();
 			if(!$this->User->save($data, ['callbacks' => false])){
 				$this->out("ERROR on $i");
