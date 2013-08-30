@@ -34,13 +34,46 @@ class EventCentral implements CakeEventListener {
 
 			$ids = [];
 			foreach ($data['work'] as $workPlace) {
-				$user->Company->create();
-				$save = $user->Company->save([
-					'name' => $workPlace['employer']['name'],
-					'facebook_id' => $workPlace['employer']['id']
+				$exists = $user->Company->find('first', [
+					'field' => ['id'],
+					'conditions' => [
+						'facebook_id' => $workPlace['employer']['id']
+					]
 				]);
 
-				$ids[] = ($save) ? $user->Company->id : $user->Company->field('id', ['facebook_id' => $workPlace['employer']['id']]);
+				if (!empty($exists)) {
+					$ids[] = $exists['Company']['id'];
+					continue;
+				}
+
+				try {
+					$facebook = new Facebook(Configure::read('Facebook'));
+					$company = $facebook->api('/' . $workPlace['employer']['id']);
+				} catch (Exception $e) {
+					die('An error occured');// @todo handle this
+				}
+
+				$user->Company->create();
+				$data = [
+					'name' => $workPlace['employer']['name'],
+					'facebook_id' => $workPlace['employer']['id']
+				];
+
+				foreach ($company['location'] as $key => $location) {
+					if (empty($location)) {
+						continue;
+					}
+
+					$data[$key] = $location;
+				}
+
+				if (isset($company['website'])) {
+					$data['website'] = $company['website'];
+				}
+
+				$user->Company->save($data);
+
+				$ids[] = $user->Company->id;
 			}
 			$user->data['Company']['Company'] = $ids;
 			return true;
