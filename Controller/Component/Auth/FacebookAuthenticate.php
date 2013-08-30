@@ -1,6 +1,7 @@
 <?php
 
 App::uses('BaseAuthenticate', 'Controller/Component/Auth');
+App::uses('CakeLog', 'Log');
 
 class FacebookAuthenticate extends BaseAuthenticate {
 
@@ -10,9 +11,16 @@ public function authenticate(CakeRequest $request, CakeResponse $response) {
 			return false;
 		}
 
-		$facebook = new Facebook(Configure::read('Facebook'));
-		$facebook->setAccessToken($token);
-		$user = $facebook->api('/me');
+		// Always try-catch Facebook
+		try {
+			$facebook = new Facebook(Configure::read('Facebook'));
+			$facebook->setAccessToken($token);
+			$user = $facebook->api('/me');
+		} catch (Exception $e) {
+			CakeLog::error($e->getMessage());
+			return false;
+		}
+
 		$user = $this->_findOrCreateUser($user);
 
 		return $user['User'];
