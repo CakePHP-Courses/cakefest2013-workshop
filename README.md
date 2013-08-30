@@ -4,11 +4,11 @@
 
 Download the github repo:
 
-	git checkout https://github.com/CakePHP-Courses/cakefest2013-workshop.git
+	git clone https://github.com/CakePHP-Courses/cakefest2013-workshop.git
 
 Use composer to get the dependencies:
 
-	composer install
+	php composer.phar install
 
 Move a fresh core.php from the cake core into your APP/Config/ folder.
 
