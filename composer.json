@@ -12,7 +12,8 @@
 		"cakedc/migrations" : "dev-develop",
 		"friendsofcake/crud" : "dev-develop",
 		"slywalker/twitter_bootstrap": "dev-master",
-		"facebook/php-sdk": "dev-master"
+		"facebook/php-sdk": "dev-master",
+		"dkullmann/cakephp-elastic-search-datasource": "dev-master"
 	},
 	"config": {
 		"vendor-dir": "Vendor/"
