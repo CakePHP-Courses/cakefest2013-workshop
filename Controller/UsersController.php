@@ -23,7 +23,7 @@ class UsersController extends AppController {
 				'full_name' => 'john smith',
 			],
 		];
-		$this->User->saveBoth($data);
+		$this->User->save($data);
 		die('test es done');
 	}
 }

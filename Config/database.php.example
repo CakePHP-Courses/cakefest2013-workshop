@@ -9,7 +9,7 @@ class DATABASE_CONFIG {
 		'password' => '.....',
 		'database' => 'bakers',
 	);
-	public $es_index = array(
+	public $index = array(
 		'datasource' => 'Elastic.ElasticSource',
 		'index' => 'bakers',
 		'port' => 9200
