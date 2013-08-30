@@ -45,7 +45,7 @@ class AppModel extends Model {
 	*
 	* @var string
 	**/
-	public $useIndexConfig = 'es_index';
+	public $useIndexConfig = 'index';
 
 	/**
 	* Check if DataSource currently is ElasticSource
