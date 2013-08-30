@@ -132,7 +132,7 @@ class ProgressBarTask extends Shell {
  * @return integer Returns the number of bytes returned from writing to stdout.
  * @access public
  */
-	public function out($message = null, $newLines = 0) {
+	public function out($message = NULL, $newLines = 0, $level = 1) {
 		return parent::out($message, $newLines);
 	}
 
