@@ -8,13 +8,15 @@
 		}
 		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-		$.getJSON('/companies/index.json', function(data) {
-			$.each(data.data, function(key, val) {
-				var position = new google.maps.LatLng(val.Company.latitude, val.Company.longitude);
-				new google.maps.Marker({
-					position: position,
-					map: map,
-					title: val.Company.name
+		$.getJSON('/users.json', function(data) {
+			$.each(data.data, function(k, v) {
+				$.each(v.User.companies, function(k, val) {
+					var position = new google.maps.LatLng(val.location.lat, val.location.lon);
+					new google.maps.Marker({
+						position: position,
+						map: map,
+						title: val.name
+					});
 				});
 			});
 		});
