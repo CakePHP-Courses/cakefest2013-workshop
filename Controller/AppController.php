@@ -41,4 +41,5 @@ class AppController extends Controller {
 			'listeners' => array('Api', 'ApiQueryLog')
 		)
 	);
+
 }

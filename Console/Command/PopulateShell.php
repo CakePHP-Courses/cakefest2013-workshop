@@ -5,12 +5,12 @@ class PopulateShell extends AppShell {
 	public $uses = array('User');
 	public $tasks = array('ProgressBar');
 	
-	public function run(){
+	public function main() {
 		$this->out('Inserting Elastic Search.');
 		$this->User->switchToElastic();
 		$count = 100;
 		$this->ProgressBar->start($count);
-		for($i = 1; $i <= $count; $i++){
+		for($i = 1; $i <= $count; $i++) {
 			$rand = mt_rand(1000,20000);
 			$rand = $rand / 20000;
 			$lat_lon = array(
@@ -38,11 +38,12 @@ class PopulateShell extends AppShell {
 				'modified' => '2013-08-30 12:00:00'
 			);
 			$this->User->create();
-			if(!$this->User->save($data, ['callbacks' => false])){
+			if (!$this->User->save($data, ['callbacks' => false])) {
 				$this->out("ERROR on $i");
 			}
 			$this->ProgressBar->next();
 		}
+
 		$this->User->switchToDatabase();
 		$this->out();
 		$this->out('Done.');
