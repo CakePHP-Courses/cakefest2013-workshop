@@ -23,7 +23,7 @@ class PopulateShell extends AppShell {
 				'first_name' => "Awesome",
 				'last_name' => "Baker",
 				'facebook_id' => $i,
-				'companies' => array(
+				'companies' => [array(
 					'id' => String::uuid(),
 					'name' => "CakeOCD $i",
 					'street' => "123 main street",
@@ -33,7 +33,7 @@ class PopulateShell extends AppShell {
 					'zip' => "12345",
 					'website' => "http://cakephp.org",					
 					'location' => $lat_lon
-				),
+				)],
 				'created' => '2013-08-30 12:00:00',
 				'modified' => '2013-08-30 12:00:00'
 			);
