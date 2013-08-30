@@ -15,6 +15,14 @@ class EventCentral implements CakeEventListener {
 		);
 	}
 
+/**
+ * Proccess Facebook work data
+ *  - if no work places skip it
+ *  - lookup the place's location on Facebook
+ *
+ * @param  CakeEvent $event
+ * @return boolean
+ */
 	public function processFacebookData(CakeEvent $event) {
 		if ($event->subject() instanceof User) {
 			$user = $event->subject();
@@ -27,11 +35,12 @@ class EventCentral implements CakeEventListener {
 			$ids = [];
 			foreach ($data['work'] as $workPlace) {
 				$user->Company->create();
-				$user->Company->save([
+				$save = $user->Company->save([
 					'name' => $workPlace['employer']['name'],
 					'facebook_id' => $workPlace['employer']['id']
 				]);
-				$ids[] = $user->Company->id;
+
+				$ids[] = ($save) ? $user->Company->id : $user->Company->field('id', ['facebook_id' => $workPlace['employer']['id']]);
 			}
 			$user->data['Company']['Company'] = $ids;
 			return true;
