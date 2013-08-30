@@ -40,11 +40,12 @@ All good to go.
 
 Elasticsearch is now running with a default cluster name of "elasticsearch" on port 9200 with default settings.
 
+## Create ElasticSearch database config
+
+Look inside Config/database.php.example, and grab the $index config to put inside your Config/database.php.
+
 ## Create ElasticSearch index and mapping
 
     Console/cake Elastic.elastic create_index bakers
     Console/cake Elastic.elastic mapping User
 
-## Create ElasticSearch database config
-
-Look inside Config/database.php.example, and grab the $index config to put inside your Config/database.php.
