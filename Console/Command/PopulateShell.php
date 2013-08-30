@@ -34,11 +34,11 @@ class PopulateShell extends AppShell {
 					'website' => "http://cakephp.org",					
 					'location' => $lat_lon
 				),
-				'created' => '2013-30-08 12:00:00',
-				'modified' => '2013-30-08 12:00:00'
+				'created' => '2013-08-30 12:00:00',
+				'modified' => '2013-08-30 12:00:00'
 			);
 			$this->User->create();
-			if(!$this->User->save($data)){
+			if(!$this->User->save($data, ['callbacks' => false])){
 				$this->out("ERROR on $i");
 			}
 			$this->ProgressBar->next();
