@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4b534da9ba7116738fb4a62b88457d9d",
+    "hash": "ffb19077b3901bc013504d5569a1262e",
     "packages": [
         {
             "name": "cakedc/migrations",
@@ -259,12 +259,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfCake/crud.git",
-                "reference": "4bf4c933fa57d4aefa82b9ae7c82e265fa6c6aa4"
+                "reference": "03696e162a06401557f3a1a2c95b05f90e5be0ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/4bf4c933fa57d4aefa82b9ae7c82e265fa6c6aa4",
-                "reference": "4bf4c933fa57d4aefa82b9ae7c82e265fa6c6aa4",
+                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/03696e162a06401557f3a1a2c95b05f90e5be0ae",
+                "reference": "03696e162a06401557f3a1a2c95b05f90e5be0ae",
                 "shasum": ""
             },
             "require": {
@@ -317,7 +317,92 @@
                 "scaffolding",
                 "update"
             ],
-            "time": "2013-08-27 16:50:25"
+            "time": "2013-08-30 17:40:18"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "77a4e394d99a67e7fb611e8b402c2da4b80fa4f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/77a4e394d99a67e7fb611e8b402c2da4b80fa4f8",
+                "reference": "77a4e394d99a67e7fb611e8b402c2da4b80fa4f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Faker": "src/",
+                    "Faker\\PHPUnit": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2013-08-29 19:11:59"
+        },
+        {
+            "name": "lorenzo/cakephp-gearman",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lorenzo/cakephp-gearman.git",
+                "reference": "576ac0c5321a4e7c6c73e3e1c1f79e4f773eeebb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lorenzo/cakephp-gearman/zipball/576ac0c5321a4e7c6c73e3e1c1f79e4f773eeebb",
+                "reference": "576ac0c5321a4e7c6c73e3e1c1f79e4f773eeebb",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "cakephp-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "José Lorenzo Rodríguez",
+                    "role": "Author"
+                }
+            ],
+            "description": "Gearman utilities for CakePHP",
+            "homepage": "https://github.com/lorenzo/cakephp-gearman",
+            "keywords": [
+                "cakephp",
+                "gearman",
+                "queue",
+                "server"
+            ],
+            "time": "2013-05-24 14:56:43"
         },
         {
             "name": "pear-pear.cakephp.org/CakePHP",
@@ -814,7 +899,9 @@
         "friendsofcake/crud": 20,
         "slywalker/twitter_bootstrap": 20,
         "facebook/php-sdk": 20,
-        "dkullmann/cakephp-elastic-search-datasource": 20
+        "dkullmann/cakephp-elastic-search-datasource": 20,
+        "fzaninotto/faker": 20,
+        "lorenzo/cakephp-gearman": 20
     },
     "platform": [
 

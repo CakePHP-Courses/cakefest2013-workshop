@@ -1,6 +1,8 @@
 <?php
 
 App::uses('CakeEventListener', 'Event');
+App::uses('GearmanQueue', 'Gearman.Client');
+
 class EventCentral implements CakeEventListener {
 
 /**
@@ -11,7 +13,8 @@ class EventCentral implements CakeEventListener {
  */
 	public function implementedEvents() {
 		return array(
-			'Model.beforeSave' => 'processFacebookData'
+			'Model.beforeSave' => 'processCompanies',
+			'Model.afterSave' => 'processFacebook'
 		);
 	}
 
@@ -23,7 +26,7 @@ class EventCentral implements CakeEventListener {
  * @param  CakeEvent $event
  * @return boolean
  */
-	public function processFacebookData(CakeEvent $event) {
+	public function processCompanies(CakeEvent $event) {
 		if ($event->subject() instanceof User) {
 			$user = $event->subject();
 			$data = $user->data[$user->alias];
@@ -46,37 +49,23 @@ class EventCentral implements CakeEventListener {
 					continue;
 				}
 
-				try {
-					$facebook = new Facebook(Configure::read('Facebook'));
-					$company = $facebook->api('/' . $workPlace['employer']['id']);
-				} catch (Exception $e) {
-					die('An error occured');// @todo handle this
-				}
-
 				$user->Company->create();
 				$data = [
 					'name' => $workPlace['employer']['name'],
 					'facebook_id' => $workPlace['employer']['id']
 				];
-
-				foreach ($company['location'] as $key => $location) {
-					if (empty($location)) {
-						continue;
-					}
-
-					$data[$key] = $location;
-				}
-
-				if (isset($company['website'])) {
-					$data['website'] = $company['website'];
-				}
-
 				$user->Company->save($data);
-
 				$ids[] = $user->Company->id;
 			}
 			$user->data['Company']['Company'] = $ids;
 			return true;
 		}
 	}
+
+	public function processFacebook($event) {
+		if ($event->subject() instanceof Company) {
+			GearmanQueue::execute('sync_company', $event->subject()->id);
+		}
+	}
+
 }
