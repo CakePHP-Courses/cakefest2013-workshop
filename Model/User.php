@@ -99,13 +99,15 @@ class User extends AppModel {
 		)
 	);
 
-	function saveBoth($data) {
+	function afterSave($created) {
+		$esData = $this->esDenormalize($this->data);
 		$this->switchToElastic();
 		$this->create();
-		$this->save($data);
-
+		$this->save($this->data, ['callbacks' => 'false']);
 		$this->switchToDatabase();
-		$this->create();
-		$this->save($data);
+	}
+
+	function esDenormalize($data) {
+		return $data;
 	}
 }
