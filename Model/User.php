@@ -15,14 +15,14 @@ class User extends AppModel {
  **/
   public function elasticMapping() {
 		return array(
-			'id' => array('type' => 'integer', 'length' => 11),
+			'id' => array('type' => 'string', 'index' => 'not_analyzed'),
 			'full_name' => array('type' => 'string'),
 			'first_name' => array('type' => 'string'),
 			'last_name' => array('type' => 'string'),
 			'companies' => array(
 				'type'=> 'object',
 				'properties' => array(
-					'id' => array('type' => 'integer'),
+					'id' => array('type' => 'string', 'index' => 'not_analyzed'),
 					'name' => array('type' => 'string'),
 					'street' => array('type' => 'string'),
 					'city' => array('type' => 'string'),
@@ -33,8 +33,8 @@ class User extends AppModel {
 					'location' => array('type' => 'geo_point', 'lat_lon' => true),
 				)
 			),
-			'created' => array('type' => 'date'),
-			'modified' => array('type' => 'date')
+			'created' => array('type' => 'date', 'format' => 'yyyy-MM-dd HH:mm:ss'),
+			'modified' => array('type' => 'date', 'format' => 'yyyy-MM-dd HH:mm:ss')
 		);
 	}
 
