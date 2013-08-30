@@ -9,6 +9,36 @@ App::uses('AppModel', 'Model');
 class User extends AppModel {
 
 /**
+ * Returns the complete document mapping related to this model to be used in Elastic Search
+ *
+ * @return array
+ **/
+  public function elasticMapping() {
+		return array(
+			'id' => array('type' => 'integer', 'length' => 11),
+			'full_name' => array('type' => 'string'),
+			'first_name' => array('type' => 'string'),
+			'last_name' => array('type' => 'string'),
+			'companies' => array(
+				'type'=> 'object',
+				'properties' => array(
+					'id' => array('type' => 'integer'),
+					'name' => array('type' => 'string'),
+					'street' => array('type' => 'string'),
+					'city' => array('type' => 'string'),
+					'state' => array('type' => 'string'),
+					'country' => array('type' => 'string'),
+					'zip' => array('type' => 'string'),
+					'website' => array('type' => 'string', 'length' => 2048),					
+					'location' => array('type' => 'geo_point', 'lat_lon' => true),
+				)
+			),
+			'created' => array('type' => 'date'),
+			'modified' => array('type' => 'date')
+		);
+	}
+
+/**
  * Validation rules
  *
  * @var array
