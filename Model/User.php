@@ -29,7 +29,7 @@ class User extends AppModel {
 					'state' => array('type' => 'string'),
 					'country' => array('type' => 'string'),
 					'zip' => array('type' => 'string'),
-					'website' => array('type' => 'string', 'length' => 2048, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),					
+					'website' => array('type' => 'string', 'length' => 2048),					
 					'location' => array('type' => 'geo_point', 'lat_lon' => true),
 				)
 			),
