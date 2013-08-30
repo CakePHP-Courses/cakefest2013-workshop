@@ -7,36 +7,37 @@ class PopulateShell extends AppShell {
 	
 	public function run(){
 		$this->out('Inserting Elastic Search.');
+		$faker = Faker\Factory::create();
 		$this->User->switchToElastic();
 		$count = 100;
 		$this->ProgressBar->start($count);
 		for($i = 1; $i <= $count; $i++){
-			$rand = mt_rand(1000,20000);
-			$rand = $rand / 20000;
 			$lat_lon = array(
-				'lat' => 37.630275 + $rand,
-				'lon' => -122.359886 - $rand
+				'lat' => $faker->latitude, //37.630275 + $rand,
+				'lon' => $faker->longitude //-122.359886 - $rand
 			);
 			$data = array(
 				'id' => String::uuid(),
-				'full_name' => "Awesome $i Baker",
-				'first_name' => "Awesome",
-				'last_name' => "Baker",
+				'full_name' => $faker->name,
+				'first_name' => $faker->firstName,
+				'last_name' => $faker->lastName,
 				'facebook_id' => $i,
-				'companies' => [array(
+				'companies' => array(array(
 					'id' => String::uuid(),
-					'name' => "CakeOCD $i",
-					'street' => "123 main street",
-					'city' => "Gotham",
-					'state' => "NY",
-					'country' => "DC",
-					'zip' => "12345",
-					'website' => "http://cakephp.org",					
+					'name' => $faker->company,
+					'street' => $faker->streetAddress,
+					'city' => $faker->city,
+					'state' => $faker->stateAbbr,
+					'country' => $faker->country,
+					'zip' => $faker->postcode,
+					'website' => $faker->url,					
 					'location' => $lat_lon
-				)],
+				)),
 				'created' => '2013-08-30 12:00:00',
 				'modified' => '2013-08-30 12:00:00'
 			);
+			debug($data);
+			exit();
 			$this->User->create();
 			if(!$this->User->save($data, ['callbacks' => false])){
 				$this->out("ERROR on $i");
