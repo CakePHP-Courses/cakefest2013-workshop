@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d9ffd3fc275bc60a3e8d11c72d2a5945",
+    "hash": "4b534da9ba7116738fb4a62b88457d9d",
     "packages": [
         {
             "name": "cakedc/migrations",
@@ -162,6 +162,53 @@
                 "zend"
             ],
             "time": "2013-08-20 04:37:09"
+        },
+        {
+            "name": "dkullmann/cakephp-elastic-search-datasource",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dkullmann/CakePHP-Elastic-Search-DataSource.git",
+                "reference": "5bdffe78bb05a4d041618a71febd9ead0dcccc34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dkullmann/CakePHP-Elastic-Search-DataSource/zipball/5bdffe78bb05a4d041618a71febd9ead0dcccc34",
+                "reference": "5bdffe78bb05a4d041618a71febd9ead0dcccc34",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*"
+            },
+            "type": "cakephp-plugin",
+            "extra": {
+                "installer-name": "Elastic"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Kullman",
+                    "role": "Author"
+                },
+                {
+                    "name": "José Lorenzo Rodríguez",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Christian Winther",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "CakePHP Datasource and Utilities for connecting models to Elastic Search types",
+            "keywords": [
+                "cakephp",
+                "elastic",
+                "search"
+            ],
+            "time": "2013-08-30 16:50:41"
         },
         {
             "name": "facebook/php-sdk",
@@ -766,7 +813,8 @@
         "cakedc/migrations": 20,
         "friendsofcake/crud": 20,
         "slywalker/twitter_bootstrap": 20,
-        "facebook/php-sdk": 20
+        "facebook/php-sdk": 20,
+        "dkullmann/cakephp-elastic-search-datasource": 20
     },
     "platform": [
 

@@ -69,4 +69,13 @@ class User extends AppModel {
 		)
 	);
 
+	function saveBoth($data) {
+		$this->switchToElastic();
+		$this->create();
+		$this->save($data);
+
+		$this->switchToDatabase();
+		$this->create();
+		$this->save($data);
+	}
 }
