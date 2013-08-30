@@ -1,0 +1,17 @@
+<?php
+class DATABASE_CONFIG {
+
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => '.....',
+		'database' => 'bakers',
+	);
+	public $es_index = array(
+		'datasource' => 'Elastic.ElasticSource',
+		'index' => 'bakers',
+		'port' => 9200
+	);
+}
