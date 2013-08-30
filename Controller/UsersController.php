@@ -17,4 +17,13 @@ class UsersController extends AppController {
 			$this->autoRender = false;
 		}
 	}
+	public function test_es() {
+		$data = [
+			'User' => [
+				'full_name' => 'john smith',
+			],
+		];
+		$this->User->saveBoth($data);
+		die('test es done');
+	}
 }

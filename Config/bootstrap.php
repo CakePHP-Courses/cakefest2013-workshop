@@ -110,6 +110,7 @@ Configure::load('facebook');
 
 CakePlugin::load('Migrations');
 CakePlugin::load('Crud');
+CakePlugin::load('Elastic');
 
 if (php_sapi_name() !== 'cli' && Configure::read('debug')) {
 	App::uses('CakeEventManager', 'Event');
