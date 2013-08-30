@@ -26,6 +26,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->Html->script('jquery.min');
+		echo $this->Html->script('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false');
 		echo $this->fetch('script');
 	?>
 </head>

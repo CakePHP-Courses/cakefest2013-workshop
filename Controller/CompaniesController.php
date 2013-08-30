@@ -6,11 +6,9 @@ App::uses('AppController', 'Controller');
  */
 class CompaniesController extends AppController {
 
-/**
- * Scaffold
- *
- * @var mixed
- */
-	public $scaffold;
+	public function map() {
+		$companies = $this->Company->find('all');
+		$this->set('companies', $companies);
+	}
 
 }
