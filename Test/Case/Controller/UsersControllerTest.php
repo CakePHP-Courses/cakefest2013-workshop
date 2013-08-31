@@ -35,4 +35,12 @@ class UsersControllerTest extends ControllerTestCase {
 	public function testLogin() {
 	}
 
+/**
+ * testThing method
+ *
+ * @return void
+ */
+	public function testThing() {
+	}
+
 }

@@ -40,4 +40,7 @@ class UsersController extends AppController {
 		}
 	}
 
+	public function thing() {
+	}
+
 }
