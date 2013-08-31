@@ -106,12 +106,10 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-Configure::load('facebook');
-
 CakePlugin::load('Migrations');
 CakePlugin::load('Crud');
 CakePlugin::load('Elastic');
-CakePlugin::load('Gearman');
+CakePlugin::load('CakephpGearman');
 
 if (php_sapi_name() !== 'cli' && Configure::read('debug')) {
 	App::uses('CakeEventManager', 'Event');
@@ -122,3 +120,5 @@ if (php_sapi_name() !== 'cli' && Configure::read('debug')) {
 		$controller->Crud->addListener('DebugKit', 'Crud.DebugKit');
 	}, 'Controller.initialize');
 }
+
+Configure::load('facebook');

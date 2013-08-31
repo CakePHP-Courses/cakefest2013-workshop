@@ -9,4 +9,4 @@ Vendor/*
 Plugin/*
 composer.phar
 Config/core.local.php
-Config/facebook.php
+
