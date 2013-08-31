@@ -7,7 +7,7 @@
 		}
 	],
 	"require": {
-		"pear-cakephp/cakephp": "2.4.0-RC2",
+		"pear-cakephp/cakephp": "2.4.0",
 		"cakephp/debug_kit" : "dev-master",
 		"cakedc/migrations" : "dev-develop",
 		"friendsofcake/crud" : "dev-develop",
