@@ -38,8 +38,9 @@ class AppController extends Controller {
 		],
 		'Crud.Crud' => array(
 			'actions' => array('index', 'add', 'view', 'edit', 'delete'),
-			'listeners' => array('Api', 'ApiQueryLog')
-		)
+			'listeners' => array('Api', 'ApiQueryLog', 'ApiPagination')
+		),
+		'Paginator' => array('settings' => ['paramType' => 'querystring'])
 	);
 
 }

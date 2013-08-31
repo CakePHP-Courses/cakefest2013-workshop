@@ -17,8 +17,8 @@ class User extends AppModel {
 		return array(
 			'id' => array('type' => 'string', 'index' => 'not_analyzed'),
 			'full_name' => array('type' => 'string'),
-			'first_name' => array('type' => 'string'),
-			'last_name' => array('type' => 'string'),
+			'first_name' => array('type' => 'string', 'include_in_all' => false),
+			'last_name' => array('type' => 'string', 'include_in_all' => false),
 			'companies' => array(
 				'type'=> 'object',
 				'properties' => array(
@@ -29,7 +29,7 @@ class User extends AppModel {
 					'state' => array('type' => 'string'),
 					'country' => array('type' => 'string'),
 					'zip' => array('type' => 'string'),
-					'website' => array('type' => 'string', 'length' => 2048),					
+					'website' => array('type' => 'string', 'length' => 2048),
 					'location' => array('type' => 'geo_point', 'lat_lon' => true),
 				)
 			),
@@ -103,7 +103,7 @@ class User extends AppModel {
 		$esData = $this->esDenormalize($this->data);
 		$this->switchToElastic();
 		$this->create();
-		$this->save($this->data, ['callbacks' => 'false']);
+		$this->save($esData, ['callbacks' => 'false']);
 		$this->switchToDatabase();
 	}
 
