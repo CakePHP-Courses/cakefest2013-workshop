@@ -18,4 +18,21 @@ class UsersControllerTest extends ControllerTestCase {
 		'app.companies_user'
 	);
 
+/**
+ * testIndex method
+ *
+ * @return void
+ */
+	public function testIndex() {
+		boo
+	}
+
+/**
+ * testLogin method
+ *
+ * @return void
+ */
+	public function testLogin() {
+	}
+
 }
