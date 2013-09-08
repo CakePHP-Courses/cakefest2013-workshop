@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ffb19077b3901bc013504d5569a1262e",
+    "hash": "469b0361bbdae67f18f23e3a9530991d",
     "packages": [
         {
             "name": "cakedc/migrations",
@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "49afa821703da5af536051cabd5dbaa5d21a1eca"
+                "reference": "f9a1cfe3bc33294429b7e2b10a1886e67e768482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/49afa821703da5af536051cabd5dbaa5d21a1eca",
-                "reference": "49afa821703da5af536051cabd5dbaa5d21a1eca",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/f9a1cfe3bc33294429b7e2b10a1886e67e768482",
+                "reference": "f9a1cfe3bc33294429b7e2b10a1886e67e768482",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "debug",
                 "kit"
             ],
-            "time": "2013-08-23 01:52:11"
+            "time": "2013-09-05 14:14:10"
         },
         {
             "name": "composer/installers",
@@ -259,12 +259,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfCake/crud.git",
-                "reference": "03696e162a06401557f3a1a2c95b05f90e5be0ae"
+                "reference": "9235c706ac196f230dbb440b8591ac6ca4b2cdb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/03696e162a06401557f3a1a2c95b05f90e5be0ae",
-                "reference": "03696e162a06401557f3a1a2c95b05f90e5be0ae",
+                "url": "https://api.github.com/repos/FriendsOfCake/crud/zipball/9235c706ac196f230dbb440b8591ac6ca4b2cdb9",
+                "reference": "9235c706ac196f230dbb440b8591ac6ca4b2cdb9",
                 "shasum": ""
             },
             "require": {
@@ -317,7 +317,7 @@
                 "scaffolding",
                 "update"
             ],
-            "time": "2013-08-30 17:40:18"
+            "time": "2013-09-05 13:53:18"
         },
         {
             "name": "fzaninotto/faker",
@@ -325,12 +325,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "77a4e394d99a67e7fb611e8b402c2da4b80fa4f8"
+                "reference": "29f203c4072e0790fa062148d5783ab56300eb1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/77a4e394d99a67e7fb611e8b402c2da4b80fa4f8",
-                "reference": "77a4e394d99a67e7fb611e8b402c2da4b80fa4f8",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/29f203c4072e0790fa062148d5783ab56300eb1a",
+                "reference": "29f203c4072e0790fa062148d5783ab56300eb1a",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +363,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2013-08-29 19:11:59"
+            "time": "2013-09-07 17:54:38"
         },
         {
             "name": "lorenzo/cakephp-gearman",
@@ -371,12 +371,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lorenzo/cakephp-gearman.git",
-                "reference": "576ac0c5321a4e7c6c73e3e1c1f79e4f773eeebb"
+                "reference": "69acd913abc1a5ad0c65a79baacda967aef4bd82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lorenzo/cakephp-gearman/zipball/576ac0c5321a4e7c6c73e3e1c1f79e4f773eeebb",
-                "reference": "576ac0c5321a4e7c6c73e3e1c1f79e4f773eeebb",
+                "url": "https://api.github.com/repos/lorenzo/cakephp-gearman/zipball/69acd913abc1a5ad0c65a79baacda967aef4bd82",
+                "reference": "69acd913abc1a5ad0c65a79baacda967aef4bd82",
                 "shasum": ""
             },
             "require": {
@@ -384,6 +384,9 @@
                 "php": ">=5.3.0"
             },
             "type": "cakephp-plugin",
+            "extra": {
+                "installer-name": "Gearman"
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -402,14 +405,14 @@
                 "queue",
                 "server"
             ],
-            "time": "2013-05-24 14:56:43"
+            "time": "2013-09-05 08:02:35"
         },
         {
             "name": "pear-pear.cakephp.org/CakePHP",
-            "version": "2.4.0RC2",
+            "version": "2.4.0",
             "dist": {
                 "type": "file",
-                "url": "http://pear.cakephp.org/get/CakePHP-2.4.0RC2.tgz",
+                "url": "http://pear.cakephp.org/get/CakePHP-2.4.0.tgz",
                 "reference": null,
                 "shasum": null
             },
@@ -417,7 +420,7 @@
                 "php": ">=5.2.8.0"
             },
             "replace": {
-                "pear-cakephp/cakephp": "== 2.4.0.0-RC2"
+                "pear-cakephp/cakephp": "== 2.4.0.0"
             },
             "type": "pear-library",
             "autoload": {
@@ -436,12 +439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/slywalker/TwitterBootstrap.git",
-                "reference": "572f6a124f5d97def57c33e5276b1b559f368619"
+                "reference": "810f252ad177d5c66b6c12c87be50a0a5d1d1c93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slywalker/TwitterBootstrap/zipball/572f6a124f5d97def57c33e5276b1b559f368619",
-                "reference": "572f6a124f5d97def57c33e5276b1b559f368619",
+                "url": "https://api.github.com/repos/slywalker/TwitterBootstrap/zipball/810f252ad177d5c66b6c12c87be50a0a5d1d1c93",
+                "reference": "810f252ad177d5c66b6c12c87be50a0a5d1d1c93",
                 "shasum": ""
             },
             "require": {
@@ -469,7 +472,7 @@
                 "cakephp",
                 "twitter"
             ],
-            "time": "2013-07-01 04:04:13"
+            "time": "2013-09-05 03:38:33"
         }
     ],
     "packages-dev": [
@@ -893,7 +896,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pear-cakephp/cakephp": 5,
         "cakephp/debug_kit": 20,
         "cakedc/migrations": 20,
         "friendsofcake/crud": 20,
