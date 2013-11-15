@@ -16,6 +16,13 @@ Move a fresh core.php from the cake core into your APP/Config/ folder.
 
 Don't forget to modify the salt and cipherSeed values.
 
+Add a file called facebook.php inside APP/Config/ with your Facebook AppID and Secret.
+
+    $config = array(
+        'appId'  => 'appid',
+        'secret' => 'secret',
+    );
+
 Create a database.php (Console/cake will have a wizard) and test your config via
 
 	http://localhost:8080
